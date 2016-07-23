@@ -6,11 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pokemon Go Neighborhood Map</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      height: 100vh;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+    #map {
+      height: 100%;
     }
   </style>
 </head>
@@ -20,9 +22,9 @@
   var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-      mapTypeId: 'HYBRID',
-      center: {lat: 19.6603639, lng: -155.0564116},
-      zoom: 13
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      center: {lat:  19.725862, lng: -155.06906},
+      zoom: 18
     });
   }
 </script>
