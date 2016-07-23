@@ -78,9 +78,5 @@ var pokestops = [
   {
     title: "Hilo Bay Pier Stone Memorial",
     position: {lat: 19.725486, lng: -155.07118}
-  },
-  {
-    title: "Rakuen",
-    position: {lat: 19.724255, lng: -155.070375}
   }
 ];
