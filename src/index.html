@@ -22,9 +22,15 @@
   var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-      mapTypeId: google.maps.MapTypeId.HYBRID,
-      center: {lat:  19.725862, lng: -155.06906},
+      center: {lat: 19.725862, lng: -155.06906},
       zoom: 18
+    });
+    var pokestop = {lat: 19.7247, lng: -155.068566};
+    var marker = new google.maps.Marker({
+      position: pokestop,
+      map: map,
+      title: 'Alii Ice Co. Compressor',
+      icon: 'img/pokestop-marker.png'
     });
   }
 </script>
