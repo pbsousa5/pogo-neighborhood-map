@@ -32,6 +32,12 @@
       title: 'Alii Ice Co. Compressor',
       icon: 'img/pokestop-marker.png'
     });
+    var infowindow = new google.maps.InfoWindow({
+      content: 'Alii Ice Co. Compressor'
+    });
+    marker.addListener('click', function () {
+      infowindow.open(map, marker);
+    });
   }
 </script>
 <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnmyJXbQ5xflnzlvc1dJetLgJPbNerL-o&v=3&callback=initMap">
