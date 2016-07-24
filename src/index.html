@@ -5,59 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pokemon Go Neighborhood Map</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      height: 100%;
-    }
-  </style>
+  <!-- build:css-->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- endbuild -->
 </head>
 <body>
 <div id="map"></div>
+<!-- build:js -->
 <script src="js/pokestops.js"></script>
 <script src="js/gyms.js"></script>
-<script>
-  var markers = [];
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 19.725862, lng: -155.06906},
-      zoom: 18
-    });
-    setMarkers(map);
-  }
-  function setMarkers(map) {
-    var i = 0;
-    pokestops.forEach(function (pokestop) {
-      var pokestopMarker = new google.maps.Marker({
-        position: pokestop.position,
-        map: map,
-        title: pokestop.title,
-        icon: 'img/pokestop-marker.png',
-        animation: google.maps.Animation.DROP,
-        id: i
-      });
-      i++;
-      markers.push(pokestopMarker);
-    });
-    gyms.forEach(function (gym) {
-      var gymMarker = new google.maps.Marker({
-        position: gym.position,
-        map: map,
-        title: gym.title,
-        icon: 'img/gym-marker.png',
-        animation: google.maps.Animation.DROP,
-        id: i
-      });
-      i++;
-      markers.push(gymMarker);
-    });
-  }
-</script>
-<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnmyJXbQ5xflnzlvc1dJetLgJPbNerL-o&v=3&callback=initMap">
+<script src="js/map.js"></script>
+<!-- endbuild -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnmyJXbQ5xflnzlvc1dJetLgJPbNerL-o&v=3&callback=initMap">
 </script>
 </body>
 </html>
