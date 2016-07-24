@@ -52,4 +52,4 @@ gulp.task('deploy', function () {
     .pipe(ghPages());
 });
 
-gulp.task('default', ['clean', 'css', 'js', 'html', 'img', 'deploy']);
+gulp.task('default', ['clean', 'css', 'js', 'html', 'img']);
