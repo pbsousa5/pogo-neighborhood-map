@@ -4,10 +4,12 @@ function initMap() {
     center: {lat: 19.725862, lng: -155.06906},
     zoom: 17
   });
+  console.log('In initMap: ' + pokestops.length);
   setMarkers(map);
 }
 function setMarkers(map) {
   var i = 0;
+  console.log('In setMarkers: ' + pokestops.length);
   pokestops.forEach(function (pokestop) {
     var pokestopMarker = new google.maps.Marker({
       position: pokestop.position,
@@ -17,7 +19,6 @@ function setMarkers(map) {
       animation: google.maps.Animation.DROP,
       id: i
     });
-    i++;
     markers.push(pokestopMarker);
   });
   gyms.forEach(function (gym) {
