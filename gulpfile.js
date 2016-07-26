@@ -48,7 +48,7 @@ gulp.task('img', ['clean'], function () {
 });
 
 gulp.task('favicon', ['clean'], function () {
-  return gulp.src('favicon.ico')
+  return gulp.src('favicon.png')
     .pipe(gulp.dest('dist/'));
 });
 
