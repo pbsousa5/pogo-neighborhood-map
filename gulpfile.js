@@ -23,7 +23,7 @@ gulp.task('css', ['clean'], function () {
 });
 
 gulp.task('js', ['clean'], function () {
-  return gulp.src(['src/js/pokestops.js', 'src/js/gyms.js', 'src/js/map.js'])
+  return gulp.src(['src/js/hamburger.js', 'src/js/model.js', 'src/js/map.js', 'src/js/viewmodel.js'])
     .pipe(sourcemaps.init())
     .pipe(uglifyJS())
     .pipe(concat('all.min.js'))
