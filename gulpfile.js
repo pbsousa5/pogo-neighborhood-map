@@ -47,6 +47,11 @@ gulp.task('img', ['clean'], function () {
     .pipe(gulp.dest('dist/img/'));
 });
 
+gulp.task('favicon', ['clean'], function () {
+  return gulp.src('favicon.ico')
+    .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('deploy', function () {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
