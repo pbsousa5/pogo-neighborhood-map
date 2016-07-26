@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* Nav */
@@ -10,6 +11,11 @@ nav {
   background-color: #e06666;
   text-align: center;
   padding-left: 40px;
+}
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
+  background-color: #fff;
+  height: 3px;
 }
 
 .title {
@@ -28,7 +34,7 @@ nav {
 }
 
 .server-status {
-  background-color: gray;
+  background-color: #fff;
   display: inline-block;
   width: 20px;
   height: 20px;
