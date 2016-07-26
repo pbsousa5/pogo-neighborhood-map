@@ -1,35 +1,27 @@
-var markers = [];
-function initMap() {
+var initMap = function () {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 19.725862, lng: -155.06906},
     zoom: 17
   });
-  // setMarkers(map);
-}
-// function setMarkers(map) {
-//   var i = 0;
-//   console.log('In setMarkers: ' + pokestops.length);
-//   pokestops.forEach(function (pokestop) {
-//     var pokestopMarker = new google.maps.Marker({
-//       position: pokestop.position,
-//       map: map,
-//       title: pokestop.title,
-//       icon: 'img/pokestop-marker.png',
-//       animation: google.maps.Animation.DROP,
-//       id: i
-//     });
-//     markers.push(pokestopMarker);
-//   });
-//   gyms.forEach(function (gym) {
-//     var gymMarker = new google.maps.Marker({
-//       position: gym.position,
-//       map: map,
-//       title: gym.title,
-//       icon: 'img/gym-marker.png',
-//       animation: google.maps.Animation.DROP,
-//       id: i
-//     });
-//     i++;
-//     markers.push(gymMarker);
-//   });
-// }
+  updateFirebaseData(map);
+};
+var setMarker = function (map, location) {
+  var icon = '';
+  switch (location.type) {
+    case 'pokestop':
+      icon = 'img/pokestop-marker.png';
+      break;
+    case 'gym':
+      icon = 'img/gym-marker.png';
+      break;
+    default:
+      console.log('ERROR: ' + location.type + ' does not have an icon assigned');
+  }
+  var marker = new google.maps.Marker({
+    position: {lat: location.lat, lng: location.lng},
+    map: map,
+    icon: icon,
+    title: location.title,
+    animation: google.maps.Animation.DROP,
+  });
+};
